@@ -1,6 +1,6 @@
 # [Encrypter-Web](https://encrypter-web.herokuapp.com/)
 
-Web version of Python script [Encrypter](https://github.com/MaxsLi/Encrypter).
+React web application for encrypting and decrypting user inputs, using Python script [Encrypter](https://github.com/MaxsLi/Encrypter).
 
 ## Description
 
@@ -8,7 +8,7 @@ The client side (this repo) is written using [React](https://reactjs.org/) with 
 
 The server side ([Encrypter-API](https://github.com/MaxsLi/Encrypter-API)), is written in [Flask](https://flask.palletsprojects.com/en/1.1.x/).
 
-Where the server side imports sciprt [Encrypter](https://github.com/MaxsLi/Encrypter) remotely using [httpimport](https://github.com/operatorequals/httpimport).
+Where the server side imports script [Encrypter](https://github.com/MaxsLi/Encrypter) remotely using [httpimport](https://github.com/operatorequals/httpimport).
 
 ```
 ┌───────────────────┐      ┌───────────────────┐      ┌─────────────┐
@@ -19,7 +19,7 @@ Where the server side imports sciprt [Encrypter](https://github.com/MaxsLi/Encry
 
 This web application is currently hosted on Heroku, [**link**](https://encrypter-web.herokuapp.com/).
 
-## Available Scripts
+## Usage
 
 ### `yarn`
 

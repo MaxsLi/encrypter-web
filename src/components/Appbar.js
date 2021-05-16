@@ -29,7 +29,7 @@ const Appbar = (props) => {
         <Tooltip title="Toggle light/dark theme">
           <IconButton className={classes.themeButton} aria-label="toggle light/dark theme" color="inherit"
                       onClick={() => {setDarkTheme(!isDarkTheme)}}>
-            { isDarkTheme ? <Brightness7Icon /> : <Brightness4Icon />}
+            { isDarkTheme ? <Brightness4Icon /> : <Brightness7Icon />}
           </IconButton>
         </Tooltip>
       </Toolbar>
