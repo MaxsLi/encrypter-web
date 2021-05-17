@@ -76,6 +76,26 @@ class About extends Component {
             </Typography>
             <div>
               <Typography component="h5" variant="h6">
+                Version 1.0.2 <small>(5/17/2021)</small>
+              </Typography>
+              <ul>
+                <li>
+                  Minor front-end optimization for mobile screens.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <Typography component="h5" variant="h6">
+                Version 1.0.1 <small>(5/16/2021)</small>
+              </Typography>
+              <ul>
+                <li>
+                  Minor bug fix.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <Typography component="h5" variant="h6">
                 Version 1.0.0 <small>(5/16/2021)</small>
               </Typography>
               <ul>

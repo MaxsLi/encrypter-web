@@ -1,4 +1,4 @@
-# [Encrypter-Web](https://encrypter-web.herokuapp.com/)
+# [Encrypter-Web](https://encrypter-web.netlify.app/)
 
 React web application for encrypting and decrypting user inputs, using Python script [Encrypter](https://github.com/MaxsLi/Encrypter).
 
@@ -17,7 +17,7 @@ Where the server side imports script [Encrypter](https://github.com/MaxsLi/Encry
 └───────────────────┘      └───────────────────┘      └─────────────┘
 ```
 
-This web application is currently hosted on Heroku, [**link**](https://encrypter-web.herokuapp.com/).
+This web application is currently hosted on Netlify, [**link**](https://encrypter-web.netlify.app/).
 
 ## Usage
 

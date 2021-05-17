@@ -14,22 +14,23 @@ import ClearAllIcon from '@material-ui/icons/ClearAll';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import {encrypt, decrypt} from "../store/thunkCreators";
 
-const styles = {
+const styles = theme => ({
   root: {
-    width: "75%",
+    width: "80%",
     marginTop: "20px",
     marginLeft: "auto",
     marginRight: "auto",
   },
   button: {
-    marginRight: "10px",
+    [theme.breakpoints.up('sm')]: {
+      marginRight: "10px",
+    },
   },
   output: {
     marginTop: "20px",
     backgroundColor: "current-color"
   }
-};
-
+});
 
 class Home extends Component {
 
