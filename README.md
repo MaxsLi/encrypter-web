@@ -1,5 +1,9 @@
 # [Encrypter-Web](https://encrypter-web.netlify.app/)
 
+[![Website encrypter-web](https://img.shields.io/website-up-down-green-red/https/encrypter-web.netlify.app/)](https://encrypter-web.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/55764a96-1dad-413d-a793-d21e1d4fc559/deploy-status)](https://app.netlify.com/sites/encrypter-web/deploys)
+[![CodeQL](https://github.com/MaxsLi/encrypter-web/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/MaxsLi/encrypter-web/actions/workflows/codeql-analysis.yml)
+
 React web application for encrypting and decrypting user inputs, using Python script [Encrypter](https://github.com/MaxsLi/Encrypter).
 
 ## Description

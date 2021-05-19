@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Route, Switch, withRouter} from 'react-router-dom';
 import {connect} from "react-redux";
 import {ping} from "./store/thunkCreators";
-import {Home, About, Appbar, SnackbarError} from "./components";
+import {Home, About, Appbar, SnackbarError, Loading} from "./components";
 import {setError} from "./store/reducerFunctions";
 
 const Routes = (props) => {
@@ -15,7 +15,7 @@ const Routes = (props) => {
   }, [ping]);
 
   useEffect(() => {
-    if (error) {
+    if (error && status === "ok") {
       // check to make sure error is what we expect, in case we get an unexpected server error object
       if (typeof error === "string") {
         setErrorMessage(error);
@@ -25,11 +25,12 @@ const Routes = (props) => {
       setSnackBarOpen(true);
       clearError();
     }
-  }, [error, clearError]);
+  }, [status, error, clearError]);
 
   if ((!status || !version) && isFetching) {
-    return <div>Loading...</div>;
-  } else if (!status && !isFetching) {
+    return <Loading/>;
+  }
+  if (status === "offline") {
     return <div>{error}</div>
   }
 

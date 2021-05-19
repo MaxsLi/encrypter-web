@@ -14,6 +14,7 @@ export const ping = () => async (dispatch) => {
     }));
   } catch (error) {
     dispatch(setError(error.response || "Server offline, please come back later."));
+    dispatch(serverStatus("offline"));
     console.error(error);
   } finally {
     dispatch(setFetchingStatus(false));
