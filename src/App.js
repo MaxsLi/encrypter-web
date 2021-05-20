@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import React, {useState} from "react";
+import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
-import store from './store';
+import store from "./store";
 import {MuiThemeProvider, createMuiTheme} from "@material-ui/core";
 
-import Routes from './routes';
+import Routes from "./routes";
 import {darkTheme, lightTheme} from "./themes/theme";
 
 function App() {

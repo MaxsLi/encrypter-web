@@ -13,8 +13,8 @@ export const ping = () => async (dispatch) => {
       dispatch(serverVersion(version.data));
     }));
   } catch (error) {
-    dispatch(setError(error.response || "Server offline, please come back later."));
     dispatch(serverStatus("offline"));
+    dispatch(setError(error.response || "Server offline, please come back later."));
     console.error(error);
   } finally {
     dispatch(setFetchingStatus(false));
