@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import {useHistory} from "react-router-dom";
-import {makeStyles} from '@material-ui/core/styles';
+import {makeStyles} from "@material-ui/core/styles";
 import {
   AppBar,
   Toolbar,
@@ -8,8 +8,8 @@ import {
   Button,
   Tooltip,
 } from "@material-ui/core";
-import Brightness7Icon from '@material-ui/icons/Brightness7';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
+import Brightness7Icon from "@material-ui/icons/Brightness7";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
 
 const useStyles = makeStyles((theme) => ({
   themeButton: {
@@ -28,14 +28,14 @@ const Appbar = (props) => {
         <Button color="inherit" onClick={() => history.push("/about")}>About</Button>
         <Tooltip title="Toggle light/dark theme">
           <IconButton className={classes.themeButton} aria-label="toggle light/dark theme" color="inherit"
-                      onClick={() => {setDarkTheme(!isDarkTheme)}}>
+                      onClick={() => {setDarkTheme(!isDarkTheme);}}>
             { isDarkTheme ? <Brightness4Icon /> : <Brightness7Icon />}
           </IconButton>
         </Tooltip>
       </Toolbar>
     </AppBar>
   );
-}
+};
 
 
 export default Appbar;

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import {withStyles} from "@material-ui/core";
 import {connect} from "react-redux";
 import {
@@ -8,13 +8,13 @@ import {
   Typography,
   Button
 } from "@material-ui/core";
-import HttpsIcon from '@material-ui/icons/Https';
-import LockOpenIcon from '@material-ui/icons/LockOpen';
-import ClearAllIcon from '@material-ui/icons/ClearAll';
-import FileCopyIcon from '@material-ui/icons/FileCopy';
-import {encrypt, decrypt} from "../store/thunkCreators";
+import HttpsIcon from "@material-ui/icons/Https";
+import LockOpenIcon from "@material-ui/icons/LockOpen";
+import ClearAllIcon from "@material-ui/icons/ClearAll";
+import FileCopyIcon from "@material-ui/icons/FileCopy";
+import {sendRequest} from "../store/thunkCreators";
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     width: "80%",
     marginTop: "20px",
@@ -22,7 +22,7 @@ const styles = theme => ({
     marginRight: "auto",
   },
   button: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       marginRight: "10px",
     },
   },
@@ -44,14 +44,14 @@ class Home extends Component {
 
   handleEncrypt = async () => {
     if (this.submitForm.current.reportValidity()) {
-      await this.props.encrypt({"input": this.input.current.value});
+      await this.props.sendRequest("encrypt", {"input": this.input.current.value});
       this.status = "Encrypted";
     }
   }
 
   handleDecrypt = async () => {
     if (this.submitForm.current.reportValidity()) {
-      await this.props.decrypt({"input": this.input.current.value});
+      await this.props.sendRequest("decrypt", {"input": this.input.current.value});
       this.status = "Decrypted";
     }
   }
@@ -67,11 +67,9 @@ class Home extends Component {
   }
 
   render() {
-    const {classes} = this.props;
-
     return (
       <>
-        <Grid className={classes.root}>
+        <Grid className={this.props.classes.root}>
           <CssBaseline/>
           <Typography component="h1" variant="h4">
             Encrypter {this.props.version.encrypter}
@@ -94,7 +92,7 @@ class Home extends Component {
             </Grid>
             <Grid>
               <Button
-                className={classes.button}
+                className={this.props.classes.button}
                 onClick={this.handleEncrypt}
                 variant="contained"
                 color="primary"
@@ -103,7 +101,7 @@ class Home extends Component {
                 Encrypt
               </Button>
               <Button
-                className={classes.button}
+                className={this.props.classes.button}
                 onClick={this.handleDecrypt}
                 variant="contained"
                 color="secondary"
@@ -112,7 +110,7 @@ class Home extends Component {
                 Decrypt
               </Button>
               <Button
-                className={classes.button}
+                className={this.props.classes.button}
                 onClick={this.handleClear}
                 variant="contained"
                 startIcon={<ClearAllIcon/>}
@@ -125,7 +123,7 @@ class Home extends Component {
           <Grid>
             <Grid>
               <TextField
-                className={classes.output}
+                className={this.props.classes.output}
                 aria-label="result"
                 name="result"
                 type="text"
@@ -154,7 +152,7 @@ class Home extends Component {
         </Grid>
       </>
     );
-  };
+  }
 }
 
 const mapStateToProps = (state) => {
@@ -167,12 +165,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    encrypt: (input) => {
-      dispatch(encrypt(input));
+    sendRequest: (route, body) => {
+      dispatch(sendRequest(route, body));
     },
-    decrypt: (cypher) => {
-      dispatch(decrypt(cypher));
-    }
   };
 };
 

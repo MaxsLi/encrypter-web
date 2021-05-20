@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import {connect} from "react-redux";
 import {withStyles} from "@material-ui/core";
 import {
@@ -8,12 +8,12 @@ import {
   Typography,
   Link
 } from "@material-ui/core";
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow'
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
 
 const styles = {
   root: {
@@ -76,6 +76,16 @@ class About extends Component {
             </Typography>
             <div>
               <Typography component="h5" variant="h6">
+                Version 1.0.4 <small>(5/20/2021)</small>
+              </Typography>
+              <ul>
+                <li>
+                  Code style improvement.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <Typography component="h5" variant="h6">
                 Version 1.0.3 <small>(5/18/2021)</small>
               </Typography>
               <ul>
@@ -121,7 +131,7 @@ class About extends Component {
         </Grid>
       </>
     );
-  };
+  }
 }
 
 const mapStateToProps = (state) => {

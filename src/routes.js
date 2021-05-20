@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Route, Switch, withRouter} from 'react-router-dom';
+import React, {useEffect, useState} from "react";
+import {Route, Switch, withRouter} from "react-router-dom";
 import {connect} from "react-redux";
 import {ping} from "./store/thunkCreators";
 import {Home, About, Appbar, SnackbarError, Loading} from "./components";
@@ -7,7 +7,7 @@ import {setError} from "./store/reducerFunctions";
 
 const Routes = (props) => {
   const {status, version, error, isFetching, ping, clearError} = props;
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const [snackBarOpen, setSnackBarOpen] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Routes = (props) => {
     return <Loading/>;
   }
   if (status === "offline") {
-    return <div>{error}</div>
+    return <div>{error}</div>;
   }
 
   return (

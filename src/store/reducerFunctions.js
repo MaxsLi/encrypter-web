@@ -8,26 +8,20 @@ const SET_ERROR = "SET_ERROR";
 
 // ACTION CREATORS
 
-export const serverStatus = (status) => {
-  return {
-    type: GET_STATUS,
-    status
-  };
-};
+export const serverStatus = (status) => ({
+  type: GET_STATUS,
+  status
+});
 
-export const serverVersion = (version) => {
-  return {
-    type: GET_VERSION,
-    version
-  }
-};
+export const serverVersion = (version) => ({
+  type: GET_VERSION,
+  version
+});
 
-export const setResult = (result) => {
-  return {
-    type: SET_RESULT,
-    result
-  };
-};
+export const setResult = (result) => ({
+  type: SET_RESULT,
+  result
+});
 
 export const setFetchingStatus = (isFetching) => ({
   type: SET_FETCHING_STATUS,

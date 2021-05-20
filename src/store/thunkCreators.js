@@ -21,23 +21,10 @@ export const ping = () => async (dispatch) => {
   }
 };
 
-export const encrypt = (text) => async (dispatch) => {
+export const sendRequest = (route, body) => async (dispatch) => {
   dispatch(setFetchingStatus(true));
   try {
-    const {data} = await axios.post(process.env.REACT_APP_API_URL + "/encrypt", text);
-    dispatch(setResult(data.result));
-  } catch (error) {
-    dispatch(setError(error.response.data.error || error.response.data.message));
-    console.error(error);
-  } finally {
-    dispatch(setFetchingStatus(false));
-  }
-};
-
-export const decrypt = (cypher) => async (dispatch) => {
-  dispatch(setFetchingStatus(true));
-  try {
-    const {data} = await axios.post(process.env.REACT_APP_API_URL + "/decrypt", cypher);
+    const {data} = await axios.post(process.env.REACT_APP_API_URL + "/" + route, body);
     dispatch(setResult(data.result));
   } catch (error) {
     dispatch(setError(error.response.data.error || error.response.data.message));
